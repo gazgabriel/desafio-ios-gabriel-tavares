@@ -1,5 +1,5 @@
 //
-//  hq.swift
+//  CharacterViewModel.swift
 //  desafio-ios-gabriel-tavares
 //
 //  Created by Gabriel Tavares on 15/04/20.
@@ -7,11 +7,3 @@
 //
 
 import Foundation
-
-struct hq {
-    var imagem:String
-    var titulo:String
-    var descrição:String
-    var preco:String
-    
-}

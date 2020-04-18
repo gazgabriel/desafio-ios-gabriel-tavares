@@ -7,23 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1641F9D2244B7FDF00ED15CE /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1641F9D1244B7FDF00ED15CE /* CharacterDetailViewModel.swift */; };
+		1641F9D3244B7FDF00ED15CE /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1641F9D1244B7FDF00ED15CE /* CharacterDetailViewModel.swift */; };
 		16D292F72447B96E0017D89C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D292F62447B96E0017D89C /* AppDelegate.swift */; };
 		16D292F92447B96E0017D89C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D292F82447B96E0017D89C /* SceneDelegate.swift */; };
-		16D292FB2447B96E0017D89C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D292FA2447B96E0017D89C /* ViewController.swift */; };
+		16D292FB2447B96E0017D89C /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D292FA2447B96E0017D89C /* CharacterViewController.swift */; };
 		16D292FE2447B96E0017D89C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D292FC2447B96E0017D89C /* Main.storyboard */; };
 		16D293002447B9700017D89C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D292FF2447B9700017D89C /* Assets.xcassets */; };
 		16D293032447B9700017D89C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D293012447B9700017D89C /* LaunchScreen.storyboard */; };
 		16D2930E2447B9700017D89C /* desafio_ios_gabriel_tavaresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2930D2447B9700017D89C /* desafio_ios_gabriel_tavaresTests.swift */; };
-		16D293192447BC850017D89C /* hq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293182447BC850017D89C /* hq.swift */; };
-		16D2931A2447BC850017D89C /* hq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293182447BC850017D89C /* hq.swift */; };
-		16D2931C2447BCB80017D89C /* character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2931B2447BCB80017D89C /* character.swift */; };
-		16D2931D2447BCB80017D89C /* character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2931B2447BCB80017D89C /* character.swift */; };
-		16D2931F2447BE200017D89C /* hqViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2931E2447BE200017D89C /* hqViewModel.swift */; };
-		16D293202447BE200017D89C /* hqViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2931E2447BE200017D89C /* hqViewModel.swift */; };
-		16D293222447BE460017D89C /* characterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293212447BE460017D89C /* characterViewModel.swift */; };
-		16D293232447BE460017D89C /* characterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293212447BE460017D89C /* characterViewModel.swift */; };
-		16D293252447C7F90017D89C /* characterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293242447C7F90017D89C /* characterRequest.swift */; };
-		16D293262447C7F90017D89C /* characterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293242447C7F90017D89C /* characterRequest.swift */; };
+		16D293192447BC850017D89C /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293182447BC850017D89C /* Comic.swift */; };
+		16D2931A2447BC850017D89C /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293182447BC850017D89C /* Comic.swift */; };
+		16D2931C2447BCB80017D89C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2931B2447BCB80017D89C /* Character.swift */; };
+		16D2931D2447BCB80017D89C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2931B2447BCB80017D89C /* Character.swift */; };
+		16D2931F2447BE200017D89C /* ComicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2931E2447BE200017D89C /* ComicViewModel.swift */; };
+		16D293202447BE200017D89C /* ComicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2931E2447BE200017D89C /* ComicViewModel.swift */; };
+		16D293222447BE460017D89C /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293212447BE460017D89C /* CharacterViewModel.swift */; };
+		16D293232447BE460017D89C /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293212447BE460017D89C /* CharacterViewModel.swift */; };
+		16D293252447C7F90017D89C /* CharacterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293242447C7F90017D89C /* CharacterRequest.swift */; };
+		16D293262447C7F90017D89C /* CharacterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D293242447C7F90017D89C /* CharacterRequest.swift */; };
+		16D7CFA3244925BF0024A1C0 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7CFA2244925BF0024A1C0 /* CharacterTableViewCell.swift */; };
+		16D7CFA4244925BF0024A1C0 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7CFA2244925BF0024A1C0 /* CharacterTableViewCell.swift */; };
+		16D7CFA524492F300024A1C0 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D292FA2447B96E0017D89C /* CharacterViewController.swift */; };
+		16D7CFA7244938C40024A1C0 /* ComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7CFA6244938C40024A1C0 /* ComicViewController.swift */; };
+		16D7CFA8244938C40024A1C0 /* ComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7CFA6244938C40024A1C0 /* ComicViewController.swift */; };
+		16D7CFAA24493D170024A1C0 /* ComicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7CFA924493D170024A1C0 /* ComicRequest.swift */; };
+		16D7CFAB24493D170024A1C0 /* ComicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7CFA924493D170024A1C0 /* ComicRequest.swift */; };
+		16D7CFAD244940880024A1C0 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7CFAC244940880024A1C0 /* CharacterDetailViewController.swift */; };
+		16D7CFAE244940880024A1C0 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7CFAC244940880024A1C0 /* CharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,22 +48,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1641F9D1244B7FDF00ED15CE /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		16D292F32447B96E0017D89C /* desafio-ios-gabriel-tavares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios-gabriel-tavares.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		16D292F62447B96E0017D89C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		16D292F82447B96E0017D89C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		16D292FA2447B96E0017D89C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16D292F62447B96E0017D89C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "desafio-ios-gabriel-tavares/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		16D292F82447B96E0017D89C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "desafio-ios-gabriel-tavares/SceneDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		16D292FA2447B96E0017D89C /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterViewController.swift; path = "desafio-ios-gabriel-tavares/ViewControllers/CharacterViewController.swift"; sourceTree = SOURCE_ROOT; };
 		16D292FD2447B96E0017D89C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16D292FF2447B9700017D89C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16D293022447B9700017D89C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		16D293042447B9700017D89C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D293042447B9700017D89C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "desafio-ios-gabriel-tavares/Info.plist"; sourceTree = SOURCE_ROOT; };
 		16D293092447B9700017D89C /* desafio-ios-gabriel-tavaresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "desafio-ios-gabriel-tavaresTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D2930D2447B9700017D89C /* desafio_ios_gabriel_tavaresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_ios_gabriel_tavaresTests.swift; sourceTree = "<group>"; };
 		16D2930F2447B9700017D89C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16D293182447BC850017D89C /* hq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hq.swift; sourceTree = "<group>"; };
-		16D2931B2447BCB80017D89C /* character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = character.swift; sourceTree = "<group>"; };
-		16D2931E2447BE200017D89C /* hqViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hqViewModel.swift; sourceTree = "<group>"; };
-		16D293212447BE460017D89C /* characterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = characterViewModel.swift; sourceTree = "<group>"; };
-		16D293242447C7F90017D89C /* characterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = characterRequest.swift; sourceTree = "<group>"; };
+		16D293182447BC850017D89C /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Comic.swift; path = "desafio-ios-gabriel-tavares/Models/Comic.swift"; sourceTree = SOURCE_ROOT; };
+		16D2931B2447BCB80017D89C /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Character.swift; path = "desafio-ios-gabriel-tavares/Models/Character.swift"; sourceTree = SOURCE_ROOT; };
+		16D2931E2447BE200017D89C /* ComicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComicViewModel.swift; path = "desafio-ios-gabriel-tavares/ViewModels/ComicViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		16D293212447BE460017D89C /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterViewModel.swift; path = "desafio-ios-gabriel-tavares/ViewModels/CharacterViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		16D293242447C7F90017D89C /* CharacterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterRequest.swift; path = "desafio-ios-gabriel-tavares/Requests/CharacterRequest.swift"; sourceTree = SOURCE_ROOT; };
+		16D7CFA2244925BF0024A1C0 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterTableViewCell.swift; path = "desafio-ios-gabriel-tavares/ViewControllers/CharacterTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		16D7CFA6244938C40024A1C0 /* ComicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComicViewController.swift; path = "desafio-ios-gabriel-tavares/ViewControllers/ComicViewController.swift"; sourceTree = SOURCE_ROOT; };
+		16D7CFA924493D170024A1C0 /* ComicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComicRequest.swift; path = "desafio-ios-gabriel-tavares/Requests/ComicRequest.swift"; sourceTree = SOURCE_ROOT; };
+		16D7CFAC244940880024A1C0 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterDetailViewController.swift; path = "desafio-ios-gabriel-tavares/ViewControllers/CharacterDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +89,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1641F9CC244B3C8D00ED15CE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				16D292FA2447B96E0017D89C /* CharacterViewController.swift */,
+				16D7CFA2244925BF0024A1C0 /* CharacterTableViewCell.swift */,
+				16D7CFAC244940880024A1C0 /* CharacterDetailViewController.swift */,
+				16D7CFA6244938C40024A1C0 /* ComicViewController.swift */,
+			);
+			name = ViewControllers;
+			path = "desafio-ios-gabriel-tavares/ViewControllers";
+			sourceTree = SOURCE_ROOT;
+		};
+		1641F9CE244B3CC100ED15CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16D292FC2447B96E0017D89C /* Main.storyboard */,
+				16D293012447B9700017D89C /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			path = "desafio-ios-gabriel-tavares/Views";
+			sourceTree = SOURCE_ROOT;
+		};
+		1641F9CF244B3CFF00ED15CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				16D2931B2447BCB80017D89C /* Character.swift */,
+				16D293182447BC850017D89C /* Comic.swift */,
+			);
+			name = Models;
+			path = "desafio-ios-gabriel-tavares/Models";
+			sourceTree = SOURCE_ROOT;
+		};
+		1641F9D0244B3D5100ED15CE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1641F9D1244B7FDF00ED15CE /* CharacterDetailViewModel.swift */,
+				16D293212447BE460017D89C /* CharacterViewModel.swift */,
+				16D2931E2447BE200017D89C /* ComicViewModel.swift */,
+			);
+			name = ViewModels;
+			path = "desafio-ios-gabriel-tavares/ViewModels";
+			sourceTree = SOURCE_ROOT;
+		};
+		1641F9D4244B862F00ED15CE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				16D293242447C7F90017D89C /* CharacterRequest.swift */,
+				16D7CFA924493D170024A1C0 /* ComicRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		16D292EA2447B96E0017D89C = {
 			isa = PBXGroup;
 			children = (
@@ -96,16 +164,13 @@
 			children = (
 				16D292F62447B96E0017D89C /* AppDelegate.swift */,
 				16D292F82447B96E0017D89C /* SceneDelegate.swift */,
-				16D292FA2447B96E0017D89C /* ViewController.swift */,
-				16D292FC2447B96E0017D89C /* Main.storyboard */,
-				16D292FF2447B9700017D89C /* Assets.xcassets */,
-				16D293012447B9700017D89C /* LaunchScreen.storyboard */,
 				16D293042447B9700017D89C /* Info.plist */,
-				16D293182447BC850017D89C /* hq.swift */,
-				16D2931E2447BE200017D89C /* hqViewModel.swift */,
-				16D2931B2447BCB80017D89C /* character.swift */,
-				16D293212447BE460017D89C /* characterViewModel.swift */,
-				16D293242447C7F90017D89C /* characterRequest.swift */,
+				1641F9D4244B862F00ED15CE /* Requests */,
+				1641F9CE244B3CC100ED15CE /* Views */,
+				1641F9CC244B3C8D00ED15CE /* ViewControllers */,
+				1641F9D0244B3D5100ED15CE /* ViewModels */,
+				1641F9CF244B3CFF00ED15CE /* Models */,
+				16D292FF2447B9700017D89C /* Assets.xcassets */,
 			);
 			path = "desafio-ios-gabriel-tavares";
 			sourceTree = "<group>";
@@ -220,14 +285,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16D2931C2447BCB80017D89C /* character.swift in Sources */,
-				16D293192447BC850017D89C /* hq.swift in Sources */,
-				16D292FB2447B96E0017D89C /* ViewController.swift in Sources */,
-				16D293222447BE460017D89C /* characterViewModel.swift in Sources */,
-				16D2931F2447BE200017D89C /* hqViewModel.swift in Sources */,
+				16D2931C2447BCB80017D89C /* Character.swift in Sources */,
+				16D7CFAD244940880024A1C0 /* CharacterDetailViewController.swift in Sources */,
+				16D293192447BC850017D89C /* Comic.swift in Sources */,
+				16D7CFAA24493D170024A1C0 /* ComicRequest.swift in Sources */,
+				16D7CFA3244925BF0024A1C0 /* CharacterTableViewCell.swift in Sources */,
+				16D292FB2447B96E0017D89C /* CharacterViewController.swift in Sources */,
+				16D293222447BE460017D89C /* CharacterViewModel.swift in Sources */,
+				16D7CFA7244938C40024A1C0 /* ComicViewController.swift in Sources */,
+				16D2931F2447BE200017D89C /* ComicViewModel.swift in Sources */,
 				16D292F72447B96E0017D89C /* AppDelegate.swift in Sources */,
 				16D292F92447B96E0017D89C /* SceneDelegate.swift in Sources */,
-				16D293252447C7F90017D89C /* characterRequest.swift in Sources */,
+				1641F9D2244B7FDF00ED15CE /* CharacterDetailViewModel.swift in Sources */,
+				16D293252447C7F90017D89C /* CharacterRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,12 +305,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16D2931D2447BCB80017D89C /* character.swift in Sources */,
-				16D293202447BE200017D89C /* hqViewModel.swift in Sources */,
-				16D2931A2447BC850017D89C /* hq.swift in Sources */,
-				16D293262447C7F90017D89C /* characterRequest.swift in Sources */,
+				16D7CFAE244940880024A1C0 /* CharacterDetailViewController.swift in Sources */,
+				16D7CFAB24493D170024A1C0 /* ComicRequest.swift in Sources */,
+				16D2931D2447BCB80017D89C /* Character.swift in Sources */,
+				16D7CFA4244925BF0024A1C0 /* CharacterTableViewCell.swift in Sources */,
+				16D293202447BE200017D89C /* ComicViewModel.swift in Sources */,
+				16D2931A2447BC850017D89C /* Comic.swift in Sources */,
+				16D7CFA524492F300024A1C0 /* CharacterViewController.swift in Sources */,
+				16D293262447C7F90017D89C /* CharacterRequest.swift in Sources */,
 				16D2930E2447B9700017D89C /* desafio_ios_gabriel_tavaresTests.swift in Sources */,
-				16D293232447BE460017D89C /* characterViewModel.swift in Sources */,
+				1641F9D3244B7FDF00ED15CE /* CharacterDetailViewModel.swift in Sources */,
+				16D293232447BE460017D89C /* CharacterViewModel.swift in Sources */,
+				16D7CFA8244938C40024A1C0 /* ComicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +337,8 @@
 				16D292FD2447B96E0017D89C /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
+			path = "desafio-ios-gabriel-tavares/Views";
+			sourceTree = SOURCE_ROOT;
 		};
 		16D293012447B9700017D89C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -269,7 +346,8 @@
 				16D293022447B9700017D89C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
+			path = "desafio-ios-gabriel-tavares/Views";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
