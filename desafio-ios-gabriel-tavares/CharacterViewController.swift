@@ -68,7 +68,7 @@ class CharacterViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let character = self.listCharacters[indexPath.row]
+        //let character = self.listCharacters[indexPath.row]
         
         //self.performSegue(withIdentifier: "characterDetail", sender: character)
     }
@@ -91,18 +91,17 @@ class CharacterViewController: UITableViewController {
                 }
                 self.tableView.reloadData()
         }
-        
-        /*
-        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            guard let characterDetailViewController = segue.destination as? CharacterDetailViewController,
-                let index = tableView.indexPathForSelectedRow?.row
-                else {
-                    return
-            }
-            characterDetailViewController.character = listCharacters[index]
-        }*/
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "characterDetail") {
+            let index = tableView.indexPathForSelectedRow?.row
+            let viewController = segue.destination as? CharacterDetailViewController
+            viewController!.character = listCharacters[(index)!]
+
+
+        }
+    }
     
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
