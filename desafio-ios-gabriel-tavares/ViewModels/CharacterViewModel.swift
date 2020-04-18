@@ -1,5 +1,5 @@
 //
-//  hqViewModel.swift
+//  CharacterViewModel.swift
 //  desafio-ios-gabriel-tavares
 //
 //  Created by Gabriel Tavares on 15/04/20.

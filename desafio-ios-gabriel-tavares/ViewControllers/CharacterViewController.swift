@@ -14,13 +14,13 @@ class CharacterViewController: UITableViewController {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                self.navigationItem.title = "\(self.listCharacters.count) Characters found"
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Marvel Heroes List"
         let characterRequest = CharacterRequest()
         characterRequest.getCharacters { [weak self] result in
             switch result {
@@ -55,7 +55,6 @@ class CharacterViewController: UITableViewController {
         // https://stackoverflow.com/a/27712427
         getData(from: url!) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url!.lastPathComponent)
             DispatchQueue.main.async() {
                  cell.imageView?.image = UIImage(data: data)
             }
@@ -98,8 +97,6 @@ class CharacterViewController: UITableViewController {
             let index = tableView.indexPathForSelectedRow?.row
             let viewController = segue.destination as? CharacterDetailViewController
             viewController!.character = listCharacters[(index)!]
-
-
         }
     }
     

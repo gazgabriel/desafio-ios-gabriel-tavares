@@ -1,5 +1,5 @@
 //
-//  hq.swift
+//  Comic.swift
 //  desafio-ios-gabriel-tavares
 //
 //  Created by Gabriel Tavares on 15/04/20.
@@ -8,19 +8,19 @@
 
 import Foundation
 
-struct DataJSON_HQ: Decodable {
+struct DataJSON_Comic: Decodable {
+    var data:Results_Comic
+}
+
+struct Results_Comic: Decodable {
     var total:Int
-    var data:Results_HQ
+    var results:[Comic]?
 }
 
-struct Results_HQ: Decodable {
-    var results:[HQQ]
-}
-
-struct HQQ: Decodable {
+struct Comic: Decodable {
     var id:Int
     var title:String
-    var description:String
+    var description:String?
     var thumbnail:Thumbnail
     var prices:[Prices]
     
@@ -31,7 +31,7 @@ struct Prices: Decodable {
     var price:Double
 }
 
-struct Thumbnail_HQ: Decodable {
+struct Thumbnail_Comic: Decodable {
     var path:String
     var `extension`:String
 }
