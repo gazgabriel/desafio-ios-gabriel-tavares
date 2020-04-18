@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1641F9D2244B7FDF00ED15CE /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1641F9D1244B7FDF00ED15CE /* CharacterDetailViewModel.swift */; };
+		1641F9D3244B7FDF00ED15CE /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1641F9D1244B7FDF00ED15CE /* CharacterDetailViewModel.swift */; };
 		16D292F72447B96E0017D89C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D292F62447B96E0017D89C /* AppDelegate.swift */; };
 		16D292F92447B96E0017D89C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D292F82447B96E0017D89C /* SceneDelegate.swift */; };
 		16D292FB2447B96E0017D89C /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D292FA2447B96E0017D89C /* CharacterViewController.swift */; };
@@ -46,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1641F9D1244B7FDF00ED15CE /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		16D292F32447B96E0017D89C /* desafio-ios-gabriel-tavares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios-gabriel-tavares.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D292F62447B96E0017D89C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "desafio-ios-gabriel-tavares/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		16D292F82447B96E0017D89C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "desafio-ios-gabriel-tavares/SceneDelegate.swift"; sourceTree = SOURCE_ROOT; };
@@ -61,10 +64,10 @@
 		16D2931B2447BCB80017D89C /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Character.swift; path = "desafio-ios-gabriel-tavares/Models/Character.swift"; sourceTree = SOURCE_ROOT; };
 		16D2931E2447BE200017D89C /* ComicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComicViewModel.swift; path = "desafio-ios-gabriel-tavares/ViewModels/ComicViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		16D293212447BE460017D89C /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterViewModel.swift; path = "desafio-ios-gabriel-tavares/ViewModels/CharacterViewModel.swift"; sourceTree = SOURCE_ROOT; };
-		16D293242447C7F90017D89C /* CharacterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterRequest.swift; path = "desafio-ios-gabriel-tavares/CharacterRequest.swift"; sourceTree = SOURCE_ROOT; };
+		16D293242447C7F90017D89C /* CharacterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterRequest.swift; path = "desafio-ios-gabriel-tavares/Requests/CharacterRequest.swift"; sourceTree = SOURCE_ROOT; };
 		16D7CFA2244925BF0024A1C0 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterTableViewCell.swift; path = "desafio-ios-gabriel-tavares/ViewControllers/CharacterTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		16D7CFA6244938C40024A1C0 /* ComicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComicViewController.swift; path = "desafio-ios-gabriel-tavares/ViewControllers/ComicViewController.swift"; sourceTree = SOURCE_ROOT; };
-		16D7CFA924493D170024A1C0 /* ComicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComicRequest.swift; path = "desafio-ios-gabriel-tavares/ComicRequest.swift"; sourceTree = SOURCE_ROOT; };
+		16D7CFA924493D170024A1C0 /* ComicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComicRequest.swift; path = "desafio-ios-gabriel-tavares/Requests/ComicRequest.swift"; sourceTree = SOURCE_ROOT; };
 		16D7CFAC244940880024A1C0 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterDetailViewController.swift; path = "desafio-ios-gabriel-tavares/ViewControllers/CharacterDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -121,12 +124,22 @@
 		1641F9D0244B3D5100ED15CE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1641F9D1244B7FDF00ED15CE /* CharacterDetailViewModel.swift */,
 				16D293212447BE460017D89C /* CharacterViewModel.swift */,
 				16D2931E2447BE200017D89C /* ComicViewModel.swift */,
 			);
 			name = ViewModels;
 			path = "desafio-ios-gabriel-tavares/ViewModels";
 			sourceTree = SOURCE_ROOT;
+		};
+		1641F9D4244B862F00ED15CE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				16D293242447C7F90017D89C /* CharacterRequest.swift */,
+				16D7CFA924493D170024A1C0 /* ComicRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
 		};
 		16D292EA2447B96E0017D89C = {
 			isa = PBXGroup;
@@ -152,8 +165,7 @@
 				16D292F62447B96E0017D89C /* AppDelegate.swift */,
 				16D292F82447B96E0017D89C /* SceneDelegate.swift */,
 				16D293042447B9700017D89C /* Info.plist */,
-				16D7CFA924493D170024A1C0 /* ComicRequest.swift */,
-				16D293242447C7F90017D89C /* CharacterRequest.swift */,
+				1641F9D4244B862F00ED15CE /* Requests */,
 				1641F9CE244B3CC100ED15CE /* Views */,
 				1641F9CC244B3C8D00ED15CE /* ViewControllers */,
 				1641F9D0244B3D5100ED15CE /* ViewModels */,
@@ -284,6 +296,7 @@
 				16D2931F2447BE200017D89C /* ComicViewModel.swift in Sources */,
 				16D292F72447B96E0017D89C /* AppDelegate.swift in Sources */,
 				16D292F92447B96E0017D89C /* SceneDelegate.swift in Sources */,
+				1641F9D2244B7FDF00ED15CE /* CharacterDetailViewModel.swift in Sources */,
 				16D293252447C7F90017D89C /* CharacterRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +314,7 @@
 				16D7CFA524492F300024A1C0 /* CharacterViewController.swift in Sources */,
 				16D293262447C7F90017D89C /* CharacterRequest.swift in Sources */,
 				16D2930E2447B9700017D89C /* desafio_ios_gabriel_tavaresTests.swift in Sources */,
+				1641F9D3244B7FDF00ED15CE /* CharacterDetailViewModel.swift in Sources */,
 				16D293232447BE460017D89C /* CharacterViewModel.swift in Sources */,
 				16D7CFA8244938C40024A1C0 /* ComicViewController.swift in Sources */,
 			);

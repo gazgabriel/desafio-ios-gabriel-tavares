@@ -22,7 +22,7 @@ class CharacterViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Marvel Heroes List"
         let characterRequest = CharacterRequest()
-        characterRequest.getCharacters { [weak self] result in
+        characterRequest.getCharactersByOffset(offset: 0) { [weak self] result in
             switch result {
             case .failure(let error):
                 print (error)
@@ -63,16 +63,6 @@ class CharacterViewController: UITableViewController {
         
         return cell
     }
-    
-    
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let character = self.listCharacters[indexPath.row]
-        
-        //self.performSegue(withIdentifier: "characterDetail", sender: character)
-    }
-    
-    
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == self.listCharacters.count - 1 {

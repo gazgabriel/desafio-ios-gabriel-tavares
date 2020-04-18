@@ -16,35 +16,26 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var descripion: UILabel?
     @IBOutlet weak var btnHQDetail: UIButton?
     
+    
+    var characterDetailViewModel: CharacterDetailViewModel?
     var character:Character?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = character?.name
-        name?.text = character?.name
         
-        if character?.description?.count == 0 {
-            descripion?.text = "Description not found."
-        }
-        else{
-            descripion?.text = character?.description
-        }
+        self.characterDetailViewModel = CharacterDetailViewModel(character: self.character!)
         
-        if character?.comics.available == 0 {
-            self.btnHQDetail?.isHidden = true
-            self.btnHQDetail?.isEnabled = false
-        }
-        
-        
-        let url = URL(string: (character?.thumbnail.path)!+"."+(character?.thumbnail.extension)!)
-        
-        getData(from: url!) { data, response, error in
-                   guard let data = data, error == nil else { return }
-                   DispatchQueue.main.async() {
-                    self.thumbnail?.image = UIImage(data: data)
-                   }
-               }
+        self.navigationItem.title = self.characterDetailViewModel?.name
+        self.name?.text = self.characterDetailViewModel?.name
+        self.descripion?.text = self.characterDetailViewModel?.description
+        self.btnHQDetail = self.characterDetailViewModel?.comicButton(button: self.btnHQDetail!)
     
+        getData(from: (self.characterDetailViewModel?.thumbnail)!) { data, response, error in
+               guard let data = data, error == nil else { return }
+               DispatchQueue.main.async() {
+                self.thumbnail?.image = UIImage(data: data)
+            }
+        }
     }
     
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {

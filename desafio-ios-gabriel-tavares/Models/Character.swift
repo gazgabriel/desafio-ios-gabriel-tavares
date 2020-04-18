@@ -10,11 +10,11 @@ import Foundation
 
 // mapeamento da estrutura de retorno JSON
 
-struct DataJSON: Decodable {
-    var data:Results
+struct DataJSON_Characters: Decodable {
+    var data:Results_Characters
 }
 
-struct Results: Decodable {
+struct Results_Characters: Decodable {
     var total:Int
     var results:[Character]
 }

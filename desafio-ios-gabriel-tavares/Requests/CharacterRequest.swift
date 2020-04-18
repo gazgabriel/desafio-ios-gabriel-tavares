@@ -18,28 +18,6 @@ struct CharacterRequest {
     let apiKey = "a9656274844c84e016ac7ec708b8c97f"
     let privateKey = "7ee55ae8c551672d1496be50389b9e32dd9e7c59"
     
-    func getCharacters(completion: @escaping(Result<[Character], CharacterError>) -> Void) {
-        let ts = Int.random(in: 100000 ... 999999)
-        let urlString = "https://gateway.marvel.com/v1/public/characters?ts=\(String.init(ts))&apikey=\(apiKey)&hash=\(MD5(string: String.init(ts)+privateKey+apiKey))"
-        let url = URL(string: urlString)!
-        let request = URLSession.shared.dataTask(with: url) {data, _, _ in
-            guard let json = data else {
-                completion(.failure(.noData))
-                return
-            }
-            do {
-                let decoder = JSONDecoder()
-                let charactersResponse = try decoder.decode(DataJSON.self, from: json)
-                let characters = charactersResponse.data.results
-                completion(.success(characters))
-            } catch {
-                completion(.failure(.canNotProcessData))
-            }
-        }
-        request.resume()
-    }
-    
-
     func getCharactersByOffset(offset: Int, completion: @escaping(Result<[Character], CharacterError>) -> Void) {
         let ts = Int.random(in: 100000 ... 999999)
         let urlString = "https://gateway.marvel.com/v1/public/characters?ts=\(String.init(ts))&apikey=\(apiKey)&hash=\(MD5(string: String.init(ts)+privateKey+apiKey))&limit=20&offset=\(offset)"
@@ -51,7 +29,7 @@ struct CharacterRequest {
             }
             do {
                 let decoder = JSONDecoder()
-                let charactersResponse = try decoder.decode(DataJSON.self, from: json)
+                let charactersResponse = try decoder.decode(DataJSON_Characters.self, from: json)
                 let characters = charactersResponse.data.results
                 completion(.success(characters))
             } catch {
