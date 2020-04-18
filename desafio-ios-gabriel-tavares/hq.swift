@@ -8,10 +8,32 @@
 
 import Foundation
 
-struct hq {
-    var imagem:String
-    var titulo:String
-    var descrição:String
-    var preco:String
+struct DataJSON_HQ: Decodable {
+    var total:Int
+    var data:Results_HQ
+}
+
+struct Results_HQ: Decodable {
+    var results:[HQQ]
+}
+
+struct HQQ: Decodable {
+    var id:Int
+    var title:String
+    var description:String
+    var thumbnail:Thumbnail
+    var prices:[Prices]
     
 }
+
+struct Prices: Decodable {
+    var type:String
+    var price:Double
+}
+
+struct Thumbnail_HQ: Decodable {
+    var path:String
+    var `extension`:String
+}
+
+

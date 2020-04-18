@@ -30,6 +30,7 @@ class CharacterViewController: UITableViewController {
                 self?.listCharacters = characters
             }
         }
+        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,16 +42,74 @@ class CharacterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "characters", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "characters", for: indexPath) as! CharacterTableViewCell
         
         let character = self.listCharacters[indexPath.row]
         
         cell.textLabel?.text = character.name
         
         
+        let url = URL(string: character.thumbnail.path+"."+character.thumbnail.extension)
+        
+        
+        // https://stackoverflow.com/a/27712427
+        getData(from: url!) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url!.lastPathComponent)
+            DispatchQueue.main.async() {
+                 cell.imageView?.image = UIImage(data: data)
+            }
+        }
+
+        
         return cell
     }
-
-
+    
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let character = self.listCharacters[indexPath.row]
+        
+        //self.performSegue(withIdentifier: "characterDetail", sender: character)
+    }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.listCharacters.count - 1 {
+                let characterRequest = CharacterRequest()
+                characterRequest.getCharactersByOffset(offset:self.listCharacters.count+20) { [weak self] result in
+                    switch result {
+                    case .failure(let error):
+                        print (error)
+                    case .success(let characters):
+                        
+                        for character in characters {
+                            self?.listCharacters.insert(character, at: (self?.listCharacters.endIndex)!)
+                        }
+                    }
+                }
+                self.tableView.reloadData()
+        }
+        
+        /*
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            guard let characterDetailViewController = segue.destination as? CharacterDetailViewController,
+                let index = tableView.indexPathForSelectedRow?.row
+                else {
+                    return
+            }
+            characterDetailViewController.character = listCharacters[index]
+        }*/
+    }
+    
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
 }
+
+
+
 

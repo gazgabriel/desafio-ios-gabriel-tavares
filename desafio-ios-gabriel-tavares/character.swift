@@ -15,10 +15,12 @@ struct DataJSON: Decodable {
 }
 
 struct Results: Decodable {
+    var total:Int
     var results:[Character]
 }
 
 struct Character: Decodable {
+    var id:Int
     var name:String
     var description:String
     var thumbnail:Thumbnail
