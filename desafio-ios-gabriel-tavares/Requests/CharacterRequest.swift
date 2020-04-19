@@ -41,9 +41,6 @@ struct CharacterRequest {
 }
 
 
-// funcao MD5
-// fonte: https://stackoverflow.com/a/56578995
-
 func MD5(string: String) -> String {
     let digest = Insecure.MD5.hash(data: string.data(using: .utf8) ?? Data())
     return digest.map {

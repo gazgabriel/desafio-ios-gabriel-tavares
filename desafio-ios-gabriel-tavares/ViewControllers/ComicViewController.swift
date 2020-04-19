@@ -18,6 +18,7 @@ class ComicViewController: UIViewController {
     
     
     var characterID:Int?
+    var comicViewModel:ComicViewModel?
     
     var listComics = [Comic]() {
         didSet {
@@ -44,33 +45,23 @@ class ComicViewController: UIViewController {
     }
 
     func HighPiceComic() {
-        var highPrice = 0.0
+        var highPrice = self.listComics[0].prices[0]
         var highPriceComic = self.listComics[0]
         for comic in self.listComics {
             let prices = comic.prices
             for price in prices {
-                if price.price > highPrice {
-                    highPrice = price.price
+                if price.price > highPrice.price {
+                    highPrice = price
                     highPriceComic = comic
                 }
             }
         }
-        self.name?.text = highPriceComic.title
-        self.desc?.text = highPriceComic.description
-        self.price?.text = String.init(highPrice)
         
-        let url = URL(string: highPriceComic.thumbnail.path+"."+highPriceComic.thumbnail.extension)
+        self.comicViewModel = ComicViewModel(comic: highPriceComic)
         
-        
-        getData(from: url!) { data, response, error in
-            guard let data = data, error == nil else { return }
-            DispatchQueue.main.async() {
-                self.thumbnail?.image = UIImage(data: data)
-            }
-        }
+        self.name?.text = comicViewModel?.title
+        self.desc?.text = comicViewModel?.description
+        self.price?.text = "Price:\(String.init(highPrice.price)) USD"
+        self.thumbnail?.kf.setImage(with: comicViewModel?.thumbnail)
     }
-    
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-           URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-       }
 }

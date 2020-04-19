@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharacterViewController: UITableViewController {
     
@@ -46,22 +47,17 @@ class CharacterViewController: UITableViewController {
         
         let character = self.listCharacters[indexPath.row]
         
-        cell.textLabel?.text = character.name
-        
+        cell.name?.text = character.name.uppercased()
         
         let url = URL(string: character.thumbnail.path+"."+character.thumbnail.extension)
         
-        
-        // https://stackoverflow.com/a/27712427
-        getData(from: url!) { data, response, error in
-            guard let data = data, error == nil else { return }
-            DispatchQueue.main.async() {
-                 cell.imageView?.image = UIImage(data: data)
-            }
-        }
-
+        cell.thumbnail?.kf.setImage(with: url)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -89,11 +85,6 @@ class CharacterViewController: UITableViewController {
             viewController!.character = listCharacters[(index)!]
         }
     }
-    
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
-    
 }
 
 

@@ -29,19 +29,10 @@ class CharacterDetailViewController: UIViewController {
         self.name?.text = self.characterDetailViewModel?.name
         self.descripion?.text = self.characterDetailViewModel?.description
         self.btnHQDetail = self.characterDetailViewModel?.comicButton(button: self.btnHQDetail!)
+        self.thumbnail?.kf.setImage(with:self.characterDetailViewModel?.thumbnail)
     
-        getData(from: (self.characterDetailViewModel?.thumbnail)!) { data, response, error in
-               guard let data = data, error == nil else { return }
-               DispatchQueue.main.async() {
-                self.thumbnail?.image = UIImage(data: data)
-            }
-        }
     }
-    
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "comicDetail") {
             let viewController = segue.destination as? ComicViewController
