@@ -30,7 +30,7 @@ struct CharacterRequest {
             do {
                 let decoder = JSONDecoder()
                 let charactersResponse = try decoder.decode(DataJSON_Characters.self, from: json)
-                let characters = charactersResponse.data.results
+                let characters = charactersResponse.data!.results
                 completion(.success(characters))
             } catch {
                 completion(.failure(.canNotProcessData))
@@ -40,9 +40,6 @@ struct CharacterRequest {
     }
 }
 
-
-// funcao MD5
-// fonte: https://stackoverflow.com/a/56578995
 
 func MD5(string: String) -> String {
     let digest = Insecure.MD5.hash(data: string.data(using: .utf8) ?? Data())

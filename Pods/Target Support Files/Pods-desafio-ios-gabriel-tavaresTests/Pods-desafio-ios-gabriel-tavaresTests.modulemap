@@ -1,0 +1,6 @@
+framework module Pods_desafio_ios_gabriel_tavaresTests {
+  umbrella header "Pods-desafio-ios-gabriel-tavaresTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

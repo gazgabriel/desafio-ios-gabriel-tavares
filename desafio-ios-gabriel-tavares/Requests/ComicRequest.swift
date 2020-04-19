@@ -36,7 +36,7 @@ struct ComicRequest {
             do {
                 let decoder = JSONDecoder()
                 let comicsResponse = try decoder.decode(DataJSON_Comic.self, from: json)
-                let hqs = comicsResponse.data.results
+                let hqs = comicsResponse.data?.results
                 completion(.success(hqs!))
             } catch {
                 completion(.failure(.canNotProcessData))
@@ -45,14 +45,3 @@ struct ComicRequest {
         request.resume()
     }
 }
-
-// funcao MD5
-// fonte: https://stackoverflow.com/a/56578995
-/*
-private func MD5(string: String) -> String {
-    let digest = Insecure.MD5.hash(data: string.data(using: .utf8) ?? Data())
-    return digest.map {
-        String(format: "%02hhx", $0)
-    }.joined()
-}
-*/
