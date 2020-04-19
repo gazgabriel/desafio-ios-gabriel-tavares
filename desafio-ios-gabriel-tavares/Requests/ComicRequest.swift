@@ -36,7 +36,7 @@ struct ComicRequest {
             do {
                 let decoder = JSONDecoder()
                 let comicsResponse = try decoder.decode(DataJSON_Comic.self, from: json)
-                let hqs = comicsResponse.data.results
+                let hqs = comicsResponse.data?.results
                 completion(.success(hqs!))
             } catch {
                 completion(.failure(.canNotProcessData))

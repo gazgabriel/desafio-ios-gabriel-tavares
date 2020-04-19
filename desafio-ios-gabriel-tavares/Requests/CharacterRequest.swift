@@ -30,7 +30,7 @@ struct CharacterRequest {
             do {
                 let decoder = JSONDecoder()
                 let charactersResponse = try decoder.decode(DataJSON_Characters.self, from: json)
-                let characters = charactersResponse.data.results
+                let characters = charactersResponse.data!.results
                 completion(.success(characters))
             } catch {
                 completion(.failure(.canNotProcessData))

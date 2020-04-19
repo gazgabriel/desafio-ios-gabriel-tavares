@@ -11,7 +11,8 @@ import Foundation
 // mapeamento da estrutura de retorno JSON
 
 struct DataJSON_Comic: Decodable {
-    var data:Results_Comic
+    var code:Int
+    var data:Results_Comic?
 }
 
 struct Results_Comic: Decodable {
