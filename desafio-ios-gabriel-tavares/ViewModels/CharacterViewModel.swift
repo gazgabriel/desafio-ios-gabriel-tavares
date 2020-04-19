@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import Kingfisher
 
 struct CharacterViewModel {
 
@@ -24,9 +26,13 @@ struct CharacterViewModel {
         return characters[index].name.uppercased()
     }
     
-    func thumbnail(index:Int) -> URL {
-        return URL(string: characters[index].thumbnail.path+"."+characters[index].thumbnail.extension)!
-        
+    func thumbnail(imageView: UIImageView, index:Int)  -> UIImageView {
+        if characters[index].thumbnail.path.hasSuffix("image_not_available") || characters[index].thumbnail.path.hasSuffix("4c002e0305708") {
+            imageView.image = UIImage(named: "placeholder.png")
+            return imageView
+        }
+        imageView.kf.setImage(with: URL(string: characters[index].thumbnail.path+"."+characters[index].thumbnail.extension))
+        return imageView
     }
     
     func characterAt(index:Int) -> Character {

@@ -23,7 +23,6 @@ class ComicViewController: UIViewController {
     var listComics = [Comic]() {
         didSet {
             DispatchQueue.main.async {
-                
                 self.HighPiceComic()
                 self.activityIdicator.stopAnimating()
                 self.activityIdicator.isHidden = true
@@ -65,6 +64,14 @@ class ComicViewController: UIViewController {
         self.name?.text = comicViewModel?.title
         self.desc?.text = comicViewModel?.description
         self.price?.text = "Price: \(String.init(highPrice.price)) USD"
-        self.thumbnail?.kf.setImage(with: comicViewModel?.thumbnail)
+        self.thumbnail = comicViewModel?.thumbnail(imageView: self.thumbnail!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
 }

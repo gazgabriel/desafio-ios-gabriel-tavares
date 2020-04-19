@@ -30,9 +30,7 @@ class CharacterDetailViewController: UIViewController {
         self.name?.text = self.characterDetailViewModel?.name
         self.descripion?.text = self.characterDetailViewModel?.description
         self.btnHQDetail = self.characterDetailViewModel?.comicButton(button: self.btnHQDetail!)
-        let processor = RoundCornerImageProcessor(cornerRadius: 1000)
-        self.thumbnail?.kf.setImage(with:self.characterDetailViewModel?.thumbnail, placeholder: nil, options: [.processor(processor)])
-    
+        self.thumbnail = self.characterDetailViewModel?.thumbnail(imageView: self.thumbnail!)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,5 +38,13 @@ class CharacterDetailViewController: UIViewController {
             let viewController = segue.destination as? ComicViewController
             viewController!.characterID = character?.id
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
 }
