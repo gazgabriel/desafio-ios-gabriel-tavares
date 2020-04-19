@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharacterDetailViewController: UIViewController {
     
@@ -29,7 +30,8 @@ class CharacterDetailViewController: UIViewController {
         self.name?.text = self.characterDetailViewModel?.name
         self.descripion?.text = self.characterDetailViewModel?.description
         self.btnHQDetail = self.characterDetailViewModel?.comicButton(button: self.btnHQDetail!)
-        self.thumbnail?.kf.setImage(with:self.characterDetailViewModel?.thumbnail)
+        let processor = RoundCornerImageProcessor(cornerRadius: 1000)
+        self.thumbnail?.kf.setImage(with:self.characterDetailViewModel?.thumbnail, placeholder: nil, options: [.processor(processor)])
     
     }
 
