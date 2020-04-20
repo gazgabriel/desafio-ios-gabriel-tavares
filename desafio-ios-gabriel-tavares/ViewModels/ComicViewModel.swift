@@ -36,9 +36,9 @@ struct ComicViewModel {
     }
     
     func thumbnail(imageView: UIImageView) -> UIImageView {
-        imageView.layer.borderWidth = 2.0;
+        imageView.layer.borderWidth = 2.0
         imageView.layer.borderColor = CGColor.init(genericGrayGamma2_2Gray: 10.0, alpha: 1.0)
-        imageView.layer.masksToBounds = true;
+        imageView.layer.masksToBounds = true
         if comic.thumbnail.path.hasSuffix("image_not_available") {
             imageView.image = UIImage(named: "placeholder.png")
             return imageView
