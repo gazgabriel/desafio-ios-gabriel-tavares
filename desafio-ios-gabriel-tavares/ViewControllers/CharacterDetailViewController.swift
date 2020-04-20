@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharacterDetailViewController: UIViewController {
     
@@ -29,8 +30,7 @@ class CharacterDetailViewController: UIViewController {
         self.name?.text = self.characterDetailViewModel?.name
         self.descripion?.text = self.characterDetailViewModel?.description
         self.btnHQDetail = self.characterDetailViewModel?.comicButton(button: self.btnHQDetail!)
-        self.thumbnail?.kf.setImage(with:self.characterDetailViewModel?.thumbnail)
-    
+        self.thumbnail = self.characterDetailViewModel?.thumbnail(imageView: self.thumbnail!)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,5 +38,13 @@ class CharacterDetailViewController: UIViewController {
             let viewController = segue.destination as? ComicViewController
             viewController!.characterID = character?.id
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
 }

@@ -11,10 +11,13 @@ import Kingfisher
 
 class CharacterViewController: UITableViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var characterViewModel: CharacterViewModel? {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         }
     }
@@ -47,10 +50,10 @@ class CharacterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "characters", for: indexPath) as! CharacterTableViewCell
-        
         cell.name?.text = characterViewModel?.name(index: indexPath.row)
-        cell.thumbnail?.kf.setImage(with: characterViewModel?.thumbnail(index: indexPath.row))
-        
+        if let viewModelImage = (characterViewModel?.thumbnail(imageView: cell.thumbnail, index: indexPath.row)) {
+            cell.thumbnail = viewModelImage
+        }
         return cell
     }
     
@@ -68,6 +71,7 @@ class CharacterViewController: UITableViewController {
     
     
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.activityIndicator.startAnimating()
         let offsetY = scrollView.contentOffset.y
         let scrollHeight = scrollView.frame.size.height
 
@@ -85,8 +89,15 @@ class CharacterViewController: UITableViewController {
                     }
                 }
                 self.tableView.reloadData()
-
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
 }
 

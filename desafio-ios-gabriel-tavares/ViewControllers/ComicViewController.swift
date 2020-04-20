@@ -14,7 +14,7 @@ class ComicViewController: UIViewController {
     @IBOutlet weak var price: UILabel?
     @IBOutlet weak var name: UILabel!    
     @IBOutlet weak var desc: UILabel!
-    
+    @IBOutlet weak var activityIdicator: UIActivityIndicatorView!
     
     
     var characterID:Int?
@@ -24,6 +24,8 @@ class ComicViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.HighPiceComic()
+                self.activityIdicator.stopAnimating()
+                self.activityIdicator.isHidden = true
             }
         }
     }
@@ -31,7 +33,7 @@ class ComicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        activityIdicator.startAnimating()
         let comicRequest = ComicRequest(characterID: characterID!)
         self.navigationItem.title = "High Price Comic"
         comicRequest.getComics{ [weak self] result in
@@ -61,7 +63,15 @@ class ComicViewController: UIViewController {
         
         self.name?.text = comicViewModel?.title
         self.desc?.text = comicViewModel?.description
-        self.price?.text = "Price:\(String.init(highPrice.price)) USD"
-        self.thumbnail?.kf.setImage(with: comicViewModel?.thumbnail)
+        self.price?.text = "Price: \(String.init(highPrice.price)) USD"
+        self.thumbnail = comicViewModel?.thumbnail(imageView: self.thumbnail!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
 }

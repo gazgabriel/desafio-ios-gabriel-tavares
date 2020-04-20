@@ -22,7 +22,6 @@ struct ComicRequest {
     init(characterID:Int) {
         let ts = Int.random(in: 100000 ... 999999)
         let urlString = "https://gateway.marvel.com/v1/public/characters/\(String.init(characterID))/comics?ts=\(String.init(ts))&apikey=\(apiKey)&hash=\(MD5(string: String.init(ts)+privateKey+apiKey))&limit=100&offset=0"
-        print(urlString)
         self.url = URL(string: urlString)!
     }
     
