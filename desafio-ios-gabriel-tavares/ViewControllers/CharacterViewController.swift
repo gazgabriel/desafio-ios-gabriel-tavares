@@ -18,7 +18,6 @@ class CharacterViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.activityIndicator.stopAnimating()
-                self.activityIndicator.isHidden = true
             }
         }
     }
@@ -36,8 +35,6 @@ class CharacterViewController: UITableViewController {
             }
         }
         self.tableView.reloadData()
-        self.activityIndicator.stopAnimating()
-        self.activityIndicator.isHidden = true
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,7 +71,6 @@ class CharacterViewController: UITableViewController {
     
     
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
         let offsetY = scrollView.contentOffset.y
         let scrollHeight = scrollView.frame.size.height
@@ -93,8 +89,6 @@ class CharacterViewController: UITableViewController {
                     }
                 }
                 self.tableView.reloadData()
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.isHidden = true
         }
     }
     

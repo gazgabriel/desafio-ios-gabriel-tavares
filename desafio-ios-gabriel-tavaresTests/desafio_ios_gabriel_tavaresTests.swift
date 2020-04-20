@@ -7,10 +7,40 @@
 //
 
 import XCTest
+import UIKit
 @testable import desafio_ios_gabriel_tavares
 
 class desafio_ios_gabriel_tavaresTests: XCTestCase {
+    
+    
+    func testCharacterDetailView() {
+        CharacterRequest().getCharactersByOffset(offset:0 ) { result in
+        switch result {
+        case .failure(let error):
+            print (error)
+        case .success(let characters):
+            var character = characters[0]
+            character.name = "Iron Man"
+            character.description = ""
+            let characterDetailViewModel = CharacterDetailViewModel(character: character)
+            XCTAssertEqual("", characterDetailViewModel.description)
+            }
+        }
+    }
+    
+    func testCharacterView() {
+        CharacterRequest().getCharactersByOffset(offset:0 ) { result in
+        switch result {
+        case .failure(let error):
+            print (error)
+        case .success(let characters):
+            let characterViewModel = CharacterViewModel(characters: characters)
+            XCTAssertEqual(characters[0].name, characterViewModel.name(index: 0))
+            }
+        }
+    }
 
+    /*
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -30,5 +60,5 @@ class desafio_ios_gabriel_tavaresTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    */
 }
