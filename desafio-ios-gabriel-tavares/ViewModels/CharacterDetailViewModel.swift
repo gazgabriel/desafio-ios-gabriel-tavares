@@ -31,10 +31,10 @@ struct CharacterDetailViewModel {
     }
     
     func thumbnail(imageView: UIImageView) -> UIImageView {
-        imageView.layer.borderWidth = 2.0
+        imageView.layer.borderWidth = 2.0;
         imageView.layer.borderColor = CGColor.init(genericGrayGamma2_2Gray: 10.0, alpha: 1.0)
         imageView.layer.cornerRadius = imageView.frame.size.width/2.0
-        imageView.layer.masksToBounds = true
+        imageView.layer.masksToBounds = true;
         if character.thumbnail.path.hasSuffix("image_not_available") || character.thumbnail.path.hasSuffix("4c002e0305708") {
             imageView.image = UIImage(named: "placeholder.png")
             return imageView
